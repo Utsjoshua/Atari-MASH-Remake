@@ -9,6 +9,35 @@ public class Player : MonoBehaviour
     private Vector3 movement;
     private float movementSqrMagnitude;
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+
+        //If player touches a Soldier
+        Soldier soldier = collider.GetComponent<Soldier>();
+        if (soldier != null)
+        {
+            //AddSoldier();
+            //audioSource.clip = keyclip;
+            //audioSource.Play();
+            Debug.Log("Got Soldier");
+            Destroy(soldier.gameObject);
+        }
+
+        //If player touches a Tree
+        Tree tree = collider.GetComponent<Tree>();
+        if (tree != null)
+        {
+            Debug.Log("Hit tree");
+        }
+
+        Hospital hospital = collider.GetComponent<Hospital>();
+        if (hospital != null)
+        {
+            //ReleaseSoldiers();
+            Debug.Log("Touched hospital");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
