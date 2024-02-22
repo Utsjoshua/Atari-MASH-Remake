@@ -36,6 +36,11 @@ public class Player : MonoBehaviour
     public Button WinRetryButton;
     public Button WinQuitButton;
 
+    [Header("AudioSource and Sound")]
+    public AudioSource AudioSource;
+    public AudioClip Collectclip;
+    public AudioClip Crashclip;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
@@ -46,8 +51,8 @@ public class Player : MonoBehaviour
             if (SoldierCounter < 3)
             {
                 AddSoldier();
-                //audioSource.clip = keyclip;
-                //audioSource.Play();
+                AudioSource.clip = Collectclip;
+                AudioSource.Play();
                 Debug.Log("Got Soldier");
                 Destroy(soldier.gameObject);
             }
@@ -57,6 +62,8 @@ public class Player : MonoBehaviour
         Tree tree = collider.GetComponent<Tree>();
         if (tree != null)
         {
+            AudioSource.clip = Crashclip;
+            AudioSource.Play();
             Debug.Log("Hit tree");
             SetFrozen();
             GameOverScreen.SetActive(true);
