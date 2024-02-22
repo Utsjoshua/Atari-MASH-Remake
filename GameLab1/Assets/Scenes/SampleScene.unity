@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 261288874}
   - component: {fileID: 261288873}
   m_Layer: 5
-  m_Name: Retry button
+  m_Name: Win Retry button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1477,7 +1477,7 @@ GameObject:
   - component: {fileID: 989276306}
   - component: {fileID: 989276305}
   m_Layer: 5
-  m_Name: Quit button
+  m_Name: Win Quit button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2217,11 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.533878
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.64544
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2648,6 +2648,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1985465832}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: WinScreen
+      value: 
+      objectReference: {fileID: 1722953624}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: QuitButton
       value: 
       objectReference: {fileID: 607964812}
@@ -2664,9 +2672,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 808684476}
     - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: WinQuitButton
+      value: 
+      objectReference: {fileID: 989276305}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: GameOverScreen
       value: 
       objectReference: {fileID: 166699927}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: LoseQuitButton
+      value: 
+      objectReference: {fileID: 607964812}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: WinRetryButton
+      value: 
+      objectReference: {fileID: 261288873}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: LoseRetryButton
+      value: 
+      objectReference: {fileID: 1415988989}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2681,11 +2705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.62
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2740,11 +2764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.58
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.54
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6757165593441873537, guid: 5c5d4bf5b9ca2fa48bfccfaea0077b19, type: 3}
       propertyPath: m_LocalPosition.z

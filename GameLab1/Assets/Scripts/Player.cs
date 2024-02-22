@@ -23,10 +23,18 @@ public class Player : MonoBehaviour
     [SerializeField] public TextMeshProUGUI RescuedNumber;
     private int RescuedCounter;
 
+    [Header("Map")]
+    [SerializeField] public Map map;
+
     [Header("Game Over UI")]
     public GameObject GameOverScreen;
-    public Button RetryButton;
-    public Button QuitButton;
+    public Button LoseRetryButton;
+    public Button LoseQuitButton;
+
+    [Header("Win UI")]
+    public GameObject WinScreen;
+    public Button WinRetryButton;
+    public Button WinQuitButton;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -52,8 +60,8 @@ public class Player : MonoBehaviour
             Debug.Log("Hit tree");
             SetFrozen();
             GameOverScreen.SetActive(true);
-            RetryButton.onClick.AddListener(Retry);
-            QuitButton.onClick.AddListener(ExitGame);
+            LoseRetryButton.onClick.AddListener(Retry);
+            LoseQuitButton.onClick.AddListener(ExitGame);
         }
 
         Hospital hospital = collider.GetComponent<Hospital>();
@@ -61,6 +69,14 @@ public class Player : MonoBehaviour
         {
             ReleaseSoldiers();
             Debug.Log("Touched hospital");
+
+            if(RescuedCounter == map.GetTotalSoldiers()){
+                Debug.Log("Win");
+                SetFrozen();
+                WinScreen.SetActive(true);
+                WinRetryButton.onClick.AddListener(Retry);
+                WinQuitButton.onClick.AddListener(ExitGame);
+            }
         }
     }
 
@@ -108,8 +124,9 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Debug.Log("Reset");
         }
-        
+
         if (frozen == false){
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");

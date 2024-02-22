@@ -28,6 +28,10 @@ public class Map : MonoBehaviour
         
     }
 
+    public int GetTotalSoldiers(){
+        return SoldierAmount;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
