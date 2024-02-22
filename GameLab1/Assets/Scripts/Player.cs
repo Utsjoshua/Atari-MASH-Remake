@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -10,6 +12,7 @@ public class Player : MonoBehaviour
     public float Speed = 3.0f;
     private Vector3 movement;
     private float movementSqrMagnitude;
+    private bool frozen = false;
 
     [Header("Soldier In Helicopter Counter")]
     [SerializeField] public TextMeshProUGUI SoldierNumber;
@@ -19,6 +22,11 @@ public class Player : MonoBehaviour
     [Header("Soldier Rescued Counter")]
     [SerializeField] public TextMeshProUGUI RescuedNumber;
     private int RescuedCounter;
+
+    [Header("Game Over UI")]
+    public GameObject GameOverScreen;
+    public Button RetryButton;
+    public Button QuitButton;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -42,6 +50,10 @@ public class Player : MonoBehaviour
         if (tree != null)
         {
             Debug.Log("Hit tree");
+            SetFrozen();
+            GameOverScreen.SetActive(true);
+            RetryButton.onClick.AddListener(Retry);
+            QuitButton.onClick.AddListener(ExitGame);
         }
 
         Hospital hospital = collider.GetComponent<Hospital>();
@@ -67,6 +79,24 @@ public class Player : MonoBehaviour
         SoldierNumber.text = SoldierCounter.ToString();
     }
 
+    public void Retry(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitGame(){
+        Application.Quit();
+        Debug.Log("Quit!");
+    }
+
+    public void SetFrozen(){
+        if (frozen){
+            frozen = false;
+        }
+        else{
+            frozen = true;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,13 +106,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (frozen == false){
+        if (frozen == false){
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
             movement = Vector3.ClampMagnitude(movement, 1.0f);
             movementSqrMagnitude = movement.sqrMagnitude;
 
             transform.Translate(movement * Speed * Time.deltaTime, Space.World);
-        //}
+        }
     }
 }
