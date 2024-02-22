@@ -106,6 +106,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R)){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
         if (frozen == false){
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
