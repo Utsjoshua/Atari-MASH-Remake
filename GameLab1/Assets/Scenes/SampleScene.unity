@@ -2758,6 +2758,10 @@ PrefabInstance:
       propertyPath: LoseRetryButton
       value: 
       objectReference: {fileID: 1415988989}
+    - target: {fileID: 3656092034063343053, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_RootOrder
       value: 4

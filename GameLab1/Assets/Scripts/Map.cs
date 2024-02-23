@@ -36,26 +36,23 @@ public class Map : MonoBehaviour
             while (CheckSoldierPosition){
                 Same = false;
                 randomSpawnPosition = new Vector3(Random.Range(-3, 9), Random.Range(-4, 5), 0);
-                foreach (Vector3 tree in TreeList){
 
+                foreach (Vector3 tree in TreeList){
                     if (randomSpawnPosition == tree){
                         Debug.Log("Same");
                         Same = true;
                         break;
                     }
-
                 }
 
                 if (!Same){
                     CheckSoldierPosition = false;
                 }
-
             }
 
             SoldierList[i] = randomSpawnPosition;
             Instantiate(SoldierPrefab, randomSpawnPosition, Quaternion.identity);
-        }
-        
+        }    
     }
 
     public int GetTotalSoldiers(){

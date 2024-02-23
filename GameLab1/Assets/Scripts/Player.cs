@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     public AudioClip Collectclip;
     public AudioClip Crashclip;
 
+    [Header("Animation")]
+    Animator animator;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
@@ -120,15 +123,31 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Animation(){
+
+        if (movement.x < 0){
+            animator.SetBool("IsMovingLeft", true);
+            animator.SetBool("IsMovingRight", false);
+        }
+
+        else if (movement.x > 0){
+            animator.SetBool("IsMovingRight", true);
+            animator.SetBool("IsMovingLeft", false);
+        }
+
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Animation();
         if (Input.GetKeyDown(KeyCode.R)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Debug.Log("Reset");

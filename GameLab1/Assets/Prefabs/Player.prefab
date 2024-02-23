@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5578039170153953782}
   - component: {fileID: 1749915359964755093}
   - component: {fileID: 3656092034063343052}
+  - component: {fileID: 5456441694281574102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -256,3 +257,23 @@ MonoBehaviour:
   AudioSource: {fileID: 0}
   Collectclip: {fileID: 0}
   Crashclip: {fileID: 0}
+--- !u!95 &5456441694281574102
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656092034063343041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f1153357a3702ff47be2ceb5efc0d8ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
