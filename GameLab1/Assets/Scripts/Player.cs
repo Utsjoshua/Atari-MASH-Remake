@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     public AudioSource AudioSource;
     public AudioClip Collectclip;
     public AudioClip Crashclip;
+    public AudioClip Winclip;
+    public AudioClip DropOffclip;
 
     [Header("Animation")]
     Animator animator;
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
             LoseQuitButton.onClick.AddListener(ExitGame);
         }
 
+        //If player touches a hospital
         Hospital hospital = collider.GetComponent<Hospital>();
         if (hospital != null)
         {
@@ -83,6 +86,8 @@ public class Player : MonoBehaviour
             if(RescuedCounter == map.GetTotalSoldiers()){
                 Debug.Log("Win");
                 SetFrozen();
+                AudioSource.clip = Winclip;
+                AudioSource.Play();
                 WinScreen.SetActive(true);
                 WinRetryButton.onClick.AddListener(Retry);
                 WinQuitButton.onClick.AddListener(ExitGame);
@@ -99,6 +104,11 @@ public class Player : MonoBehaviour
 
     public void ReleaseSoldiers()
     {
+        if (SoldierCounter > 0){
+            AudioSource.clip = DropOffclip;
+            AudioSource.Play();
+        }
+
         RescuedCounter += SoldierCounter;
         SoldierCounter = 0;
         RescuedNumber.text = RescuedCounter.ToString();

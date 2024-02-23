@@ -3566,6 +3566,8 @@ MonoBehaviour:
   TimeUpScreen: {fileID: 73763091}
   RetryButton: {fileID: 269746488}
   QuitButton: {fileID: 1510696392}
+  AudioSource: {fileID: 3656092034902787191}
+  TimeUpclip: {fileID: 8300000, guid: c0f60bfb42ccd39409135cd7a8d322ed, type: 3}
 --- !u!1 &2016339343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,6 +3665,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1985465832}
     - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: Winclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 508a93d06ce20d0448012d0b6d9418c3, type: 3}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: Crashclip
       value: 
       objectReference: {fileID: 8300000, guid: 2a628cd96478b9b4fbf55a0727fd8eb1, type: 3}
@@ -3682,6 +3688,10 @@ PrefabInstance:
       propertyPath: Collectclip
       value: 
       objectReference: {fileID: 8300000, guid: 9b36afe9924af9a4bb7b89cc65b16130, type: 3}
+    - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
+      propertyPath: DropOffclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 890bc41c62279bc45a35b0c346619355, type: 3}
     - target: {fileID: 3656092034063343052, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: RetryButton
       value: 
@@ -3716,7 +3726,7 @@ PrefabInstance:
       objectReference: {fileID: 1415988989}
     - target: {fileID: 3656092034063343053, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 3656092034063343055, guid: 6c09bae6ab4efac4e8c30afdc6e04b3e, type: 3}
       propertyPath: m_RootOrder

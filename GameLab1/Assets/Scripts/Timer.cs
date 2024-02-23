@@ -29,6 +29,10 @@ public class Timer : MonoBehaviour
     public Button RetryButton;
     public Button QuitButton;
 
+    [Header("Time Up Sound")]
+    public AudioSource AudioSource;
+    public AudioClip TimeUpclip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +50,8 @@ public class Timer : MonoBehaviour
             SetTimerText();
             timerText.color = Color.red;
             enabled = false;
+            AudioSource.clip = TimeUpclip;
+            AudioSource.Play();
             TimeUpScreen.SetActive(true);
             RetryButton.onClick.AddListener(Retry);
             QuitButton.onClick.AddListener(ExitGame);
