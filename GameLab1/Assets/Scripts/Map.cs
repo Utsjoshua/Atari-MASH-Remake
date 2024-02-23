@@ -39,7 +39,15 @@ public class Map : MonoBehaviour
 
                 foreach (Vector3 tree in TreeList){
                     if (randomSpawnPosition == tree){
-                        Debug.Log("Same");
+                        Debug.Log("Same with tree");
+                        Same = true;
+                        break;
+                    }
+                }
+
+                foreach (Vector3 soldier in SoldierList){
+                    if (randomSpawnPosition == soldier){
+                        Debug.Log("Same with soldier");
                         Same = true;
                         break;
                     }
