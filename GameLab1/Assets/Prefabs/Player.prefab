@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3656092034063343054}
   - component: {fileID: 3656092034063343053}
   - component: {fileID: 5578039170153953782}
-  - component: {fileID: 5097367309678250689}
   - component: {fileID: 1749915359964755093}
   - component: {fileID: 3656092034063343052}
   m_Layer: 0
@@ -136,14 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!81 &5097367309678250689
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3656092034063343041}
-  m_Enabled: 1
 --- !u!82 &1749915359964755093
 AudioSource:
   m_ObjectHideFlags: 0
@@ -262,3 +253,6 @@ MonoBehaviour:
   WinScreen: {fileID: 0}
   WinRetryButton: {fileID: 0}
   WinQuitButton: {fileID: 0}
+  AudioSource: {fileID: 0}
+  Collectclip: {fileID: 0}
+  Crashclip: {fileID: 0}
